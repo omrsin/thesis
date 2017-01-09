@@ -1,0 +1,16 @@
+@using = jpf-symbc
+
+target=de.tudarmstadt.thesis.jpf.examples.SimpleSymbolicExample
+
+symbolic.dp=choco
+symbolic.string_dp=automata
+
+symbolic.string_dp_timeout_ms=0
+
+symbolic.method= de.tudarmstadt.thesis.jpf.examples.SimpleSymbolicExample.test(sym)
+
+listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
+
+symbolic.debug=true
+
+vm.storage.class=nil

@@ -1,0 +1,10 @@
+# General temporary files
+*~
+
+# Eclipse files
+.classpath
+.project
+**/.settings/*
+
+# Binaries
+**/target/*

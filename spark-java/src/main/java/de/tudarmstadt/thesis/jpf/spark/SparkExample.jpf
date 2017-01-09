@@ -1,0 +1,4 @@
+target = de.tudarmstadt.thesis.jpf.spark.SparkExample
+
+cg.enumerate_random = true
+report.console.property_violation=error,trace
