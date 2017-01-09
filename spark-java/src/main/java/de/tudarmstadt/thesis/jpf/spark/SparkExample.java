@@ -11,7 +11,7 @@ import org.apache.spark.api.java.function.Function;
 public class SparkExample {
 	
 	public static void main(String[] args) {
-		System.out.println("Java Spark test");
+		System.out.println("Java Spark Test");
 	
 		SparkConf conf = new SparkConf()
 				.setAppName("JavaNumbers")
