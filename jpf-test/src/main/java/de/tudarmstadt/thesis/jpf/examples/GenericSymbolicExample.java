@@ -23,6 +23,20 @@ public class GenericSymbolicExample {
 		}
 	}
 	
+	class DummyInnerClassWithImplementedInterface implements DummyInnerInterface {
+		@Override
+		public Integer call(Integer param) {
+			return simpleMethod(param);
+		}		
+	}
+	
+	class DummyInnerClassWithImplementedGenericInterface implements DummyInnerGenericInterface<Integer> {
+		@Override
+		public Integer call(Integer param) {
+			return simpleMethod(param);
+		}		
+	}
+	
 	/*---------- Interfaces ----------*/
 	interface DummyInnerInterface {
 		public Integer call(Integer param);
@@ -62,8 +76,13 @@ public class GenericSymbolicExample {
 		/*---------- Call to Classes ----------*/		
 		DummyInnerClass.call(1);
 		new GenericSymbolicExample().new DummyInnerGenericClass<Integer>().call(1);
+//		new GenericSymbolicExample().new DummyInnerClassWithImplementedInterface().call(1);
+		testDummyInnerInterface(new GenericSymbolicExample().new DummyInnerClassWithImplementedInterface());
+		new GenericSymbolicExample().new DummyInnerClassWithImplementedGenericInterface().call(1);
+		testDummyInnerGenericInterface(new GenericSymbolicExample().new DummyInnerClassWithImplementedGenericInterface());
 		
-		/*---------- Calls to Interfaces ----------*/
+		
+		/*---------- Calls to Interfaces as Anonymous Classes ----------*/
 		testDummyInnerInterface(new DummyInnerInterface() {			
 			@Override
 			public Integer call(Integer param) {
@@ -118,6 +137,6 @@ public class GenericSymbolicExample {
 			public Integer call(Integer param) {
 				return simpleMethod(param);
 			}
-		}.call(1);
+		}.call(1);		
 	}
 }

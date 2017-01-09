@@ -11,11 +11,13 @@ symbolic.debug=true
 
 # Select one of the following to test inner classes
 #symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$DummyInnerClass.call(sym)
-#symbolic.method=${jpf-test.package_path}.GenericSymolicExample$DummyInnerGenericClass.call(sym)
+#symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$DummyInnerGenericClass.call(sym)
+symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$DummyInnerClassWithImplementedInterface.call(sym)
+#symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$DummyInnerClassWithImplementedGenericInterface.call(sym)
 
 # Select the following to test inner interfaces' implementations (move the number 1-8 to test the
 # different internal anonymous classes
-symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$1.call(sym)
+#symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$1.call(sym)
 
 listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
 vm.storage.class=nil
