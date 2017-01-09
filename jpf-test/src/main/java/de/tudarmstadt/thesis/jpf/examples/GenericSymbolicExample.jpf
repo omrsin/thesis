@@ -1,0 +1,21 @@
+@using = jpf-symbc
+
+jpf-test.package_path=de.tudarmstadt.thesis.jpf.examples
+
+target=${jpf-test.package_path}.GenericSymbolicExample
+
+#symbolic.dp=choco
+#symbolic.string_dp=automata
+#symbolic.string_dp_timeout_ms=0
+symbolic.debug=true
+
+# Select one of the following to test inner classes
+#symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$DummyInnerClass.call(sym)
+#symbolic.method=${jpf-test.package_path}.GenericSymolicExample$DummyInnerGenericClass.call(sym)
+
+# Select the following to test inner interfaces' implementations (move the number 1-8 to test the
+# different internal anonymous classes
+symbolic.method=${jpf-test.package_path}.GenericSymbolicExample$1.call(sym)
+
+listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
+vm.storage.class=nil
