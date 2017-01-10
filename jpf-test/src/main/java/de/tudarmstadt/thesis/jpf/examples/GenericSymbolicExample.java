@@ -76,7 +76,7 @@ public class GenericSymbolicExample {
 		/*---------- Call to Classes ----------*/		
 		DummyInnerClass.call(1);
 		new GenericSymbolicExample().new DummyInnerGenericClass<Integer>().call(1);
-//		new GenericSymbolicExample().new DummyInnerClassWithImplementedInterface().call(1);
+		new GenericSymbolicExample().new DummyInnerClassWithImplementedInterface().call(1);
 		testDummyInnerInterface(new GenericSymbolicExample().new DummyInnerClassWithImplementedInterface());
 		new GenericSymbolicExample().new DummyInnerClassWithImplementedGenericInterface().call(1);
 		testDummyInnerGenericInterface(new GenericSymbolicExample().new DummyInnerClassWithImplementedGenericInterface());
