@@ -49,6 +49,8 @@ This is the main module of **[Java Pathfinder](http://babelfish.arc.nasa.gov/tra
 
 jpf-symbc
 ---------
+**WARNING: I have modified this module in order to avoid problems with some java constructs. The source of this customized version will be provided eventually, as soon as a good distribution mean becomes available.**
+
 This is a symbolic execution module built on top of JPF knows as [SPF or Symbolic Pathfinder](http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-symbc). Here are the installation steps on Ubuntu 16.04. Always check the official installation instructions because the repositories could have been moved.
 
 1. Clone the project **jpf-symbc** from the official repository on the same root directory where **jpf-core** was cloned using: 
