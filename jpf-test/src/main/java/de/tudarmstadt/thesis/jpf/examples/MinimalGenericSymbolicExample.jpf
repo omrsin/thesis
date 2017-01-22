@@ -12,6 +12,6 @@ target=${jpf-test.package_path}.MinimalGenericSymbolicExample
 symbolic.method=${jpf-test.package_path}.MinimalGenericSymbolicExample$1.call(sym)
 
 listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
-vm.storage.class=nil
+#listener = gov.nasa.jpf.symbc.SymbolicListener
 #log.level=FINER
 #log.finer=gov.nasa.jpf.vm.ThreadInfo

@@ -3,7 +3,7 @@ package de.tudarmstadt.thesis.jpf.examples;
 public class MinimalGenericSymbolicExample {
 	
 	private static Integer simpleMethod(Integer param) {
-		if((int)param > 1) {
+		if(param > 1) {
 			return 0;
 		} else {
 			return 1;
