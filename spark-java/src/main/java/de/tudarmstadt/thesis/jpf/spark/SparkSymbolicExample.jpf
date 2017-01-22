@@ -13,6 +13,6 @@ symbolic.method = ${jpf-spark.package_path}.SparkExample$1.call(sym)
 
 symbolic.debug=true
 
-listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
+listener = TestListener
 
 vm.storage.class=nil
