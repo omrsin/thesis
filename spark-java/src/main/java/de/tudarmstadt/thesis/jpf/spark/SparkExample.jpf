@@ -1,3 +1,5 @@
+@using=jpf-symspark
+
 target = de.tudarmstadt.thesis.jpf.spark.SparkExample
 
 cg.enumerate_random = true

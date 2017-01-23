@@ -49,7 +49,8 @@ public class SparkExample {
 				return v1+v2;
 			}
 		});
-		
+
+		System.out.println(filteredNumbers);
 		System.out.println(mappedNumbers.collect());
 		System.out.println(numbersSum);
 		
