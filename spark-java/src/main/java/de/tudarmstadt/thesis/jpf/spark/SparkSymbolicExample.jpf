@@ -11,8 +11,8 @@ symbolic.string_dp_timeout_ms=0
 
 symbolic.method = ${jpf-spark.package_path}.SparkExample$1.call(sym)
 
-symbolic.debug=true
+#symbolic.debug=true
 
 listener = TestListener
 
-vm.storage.class=nil
+#vm.storage.class=nil
