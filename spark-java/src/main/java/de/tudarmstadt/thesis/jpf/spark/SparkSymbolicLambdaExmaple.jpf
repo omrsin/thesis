@@ -3,19 +3,19 @@
 
 jpf-spark.package_path=de.tudarmstadt.thesis.jpf.spark
 
-target=${jpf-spark.package_path}.SparkExample
+target=${jpf-spark.package_path}.SparkLambdaExample
 
 symbolic.dp=choco
 symbolic.string_dp=automata
 
 symbolic.string_dp_timeout_ms=0
 
-#symbolic.method = ${jpf-spark.package_path}.SparkExample$1.call(sym)
-symbolic.method = ${jpf-spark.package_path}.SparkExample.lambda$0(sym)
+symbolic.method = ${jpf-spark.package_path}.SparkLambdaExample.lambda$0(sym);\
+				  ${jpf-spark.package_path}.SparkLambdaExample.lambda$1(sym);\
+				  ${jpf-spark.package_path}.SparkLambdaExample.lambda$2(sym#sym)
 
 #symbolic.debug=true
 
 listener = de.tudarmstadt.thesis.symspark.listeners.TestListener
 #listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
 
-#vm.storage.class=nil

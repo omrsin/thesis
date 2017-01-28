@@ -22,6 +22,7 @@ public class SparkExample {
 		
 		List<Integer> numberList = Arrays.asList(1,2,3,3,4);
 		JavaRDD<Integer> numbers = spark.parallelize(numberList);		
+		
 		JavaRDD<Integer> filteredNumbers = numbers.filter(new Function<Integer, Boolean>() {
 			
 			private static final long serialVersionUID = 1L;
@@ -31,6 +32,7 @@ public class SparkExample {
 				return v1 > 1 && v1 <=3;
 			}
 		});
+		
 		JavaRDD<Integer> mappedNumbers = filteredNumbers.map(new Function<Integer, Integer>() {
 
 			@Override
@@ -50,7 +52,7 @@ public class SparkExample {
 			}
 		});
 
-		System.out.println(filteredNumbers);
+		System.out.println(filteredNumbers.collect());
 		System.out.println(mappedNumbers.collect());
 		System.out.println(numbersSum);
 		
