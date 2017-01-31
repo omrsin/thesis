@@ -47,8 +47,9 @@ public class SparkExample {
 		
 		Integer numbersSum = mappedNumbers.reduce(new Function2<Integer, Integer, Integer>() {			
 			@Override
-			public Integer call(Integer v1, Integer v2) throws Exception {				
-				return v1+v2;
+			public Integer call(Integer v1, Integer v2) throws Exception {
+				if(v1 < 5) return v1+v2;
+				else return v1;
 			}
 		});
 
