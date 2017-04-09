@@ -1,0 +1,23 @@
+#@using=jpf-symbc
+@using=jpf-symspark
+
+jpf-spark.package_path=de.tudarmstadt.thesis.jpf.spark
+
+target=${jpf-spark.package_path}.SparkExample
+
+symbolic.dp=choco
+symbolic.string_dp=automata
+
+symbolic.string_dp_timeout_ms=0
+
+#symbolic.method = ${jpf-spark.package_path}.SparkExample$3.call(sym#sym)
+
+#symbolic.debug=true
+
+listener = de.tudarmstadt.thesis.symspark.listeners.TestListener
+#listener = gov.nasa.jpf.symbc.sequences.SymbolicSequenceListener
+log.info=de.tudarmstadt.thesis.symspark.jvm.bytecode.INVOKEVIRTUAL
+
+spark.methods=filter
+
+#vm.storage.class=nil

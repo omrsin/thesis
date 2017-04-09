@@ -30,5 +30,6 @@
 	<modules>
 		<module>jpf-test</module>
 		<module>spark-java</module>
+		<module>spark-scala</module>
 	</modules>
 </project>
