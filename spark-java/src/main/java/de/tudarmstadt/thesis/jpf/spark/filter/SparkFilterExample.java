@@ -1,4 +1,4 @@
-package de.tudarmstadt.thesis.jpf.spark;
+package de.tudarmstadt.thesis.jpf.spark.filter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,13 +7,12 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.Function2;
 
-public class SparkExample {
+public class SparkFilterExample {
 	
 	public static void main(String[] args) {
-		System.out.println("Java Spark Test");
-	
+		System.out.println("Java Spark Filter Test");
+		
 		SparkConf conf = new SparkConf()
 				.setAppName("JavaNumbers")
 				.setMaster("local");
@@ -30,30 +29,10 @@ public class SparkExample {
 			}
 		});
 		
-		JavaRDD<Integer> mappedNumbers = filteredNumbers.map(new Function<Integer, Integer>() {
-			@Override
-			public Integer call(Integer v1) throws Exception {
-				if(v1 == 2) {
-					return 7;
-				} else {
-					return v1;
-				}
-			}			
-		});
-		
-		Integer numbersSum = mappedNumbers.reduce(new Function2<Integer, Integer, Integer>() {			
-			@Override
-			public Integer call(Integer v1, Integer v2) throws Exception {
-				if(v1 < 5) return v1+v2;
-				else return v1;
-			}
-		});
-
 		System.out.println(filteredNumbers.collect());
-		System.out.println(mappedNumbers.collect());
-		System.out.println(numbersSum);
 		
 		spark.stop();
 		spark.close();
 	}
+
 }

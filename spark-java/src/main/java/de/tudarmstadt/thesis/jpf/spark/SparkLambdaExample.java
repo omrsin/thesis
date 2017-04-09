@@ -22,7 +22,10 @@ public class SparkLambdaExample {
 		JavaRDD<Integer> numbers = spark.parallelize(numberList);		
 		JavaRDD<Integer> filteredNumbers = numbers.filter(x -> x > 1 && x <= 3);		
 		JavaRDD<Integer> mappedNumbers = filteredNumbers.map( x -> x==2 ? 7 : x);		
-		Integer numbersSum = mappedNumbers.reduce((x,y) -> (x+y));
+		Integer numbersSum = mappedNumbers.reduce((x,y) -> {
+			if(x < 5) return x+y;
+			else return x;
+		});
 		
 		System.out.println(filteredNumbers.collect());
 		System.out.println(mappedNumbers.collect());
